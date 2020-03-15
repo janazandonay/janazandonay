@@ -1,0 +1,27 @@
+import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+public class Login {
+  @Test 
+  public void login() {
+  System.setProperty("webdriver.chrome.driver", "path of driver"); 
+  WebDriver driver=new ChromeDriver(); driver.manage().window().maximize(); 
+  driver.get("https://www.facebook.com/login"); 
+  WebElement email=driver.findElement(By.id("e-mail")); 
+  WebElement password=driver.findElement(By.id("pass")); 
+  WebElement login=driver.findElement(By.id("loginbutton")); 
+  username.sendKeys("example@gmail.com"); password.sendKeys("errada"); 
+  login.click(); 
+  String actualUrl="https://www.facebook.com/feed/"; 
+  String expectedUrl= driver.getCurrentUrl(); 
+  if(actualUrl.equalsIgnoreCase(expectedUrl)) { 
+  System.out.println("Login Ok"); } 
+  else { System.out.println("Login errado"); }
+  }   
+    
+}
